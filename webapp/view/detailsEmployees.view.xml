@@ -1,0 +1,106 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+controllerName="leaveappfrontend.controller.detailsEmployees" displayBlock="true">
+	<App>
+		<pages>
+			<Page id= "detailsEmployees" title="Employee Details">
+				<content>
+					<VBox class="sapUiSmallMargin">			
+					    <f:SimpleForm id="detailsEmployeesForm"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Details"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" >
+							<f:content>
+                                <Label text="Employee Id"/>
+								<Input value=""  editable = "false" id = "employeeIdInput"/>
+                                <Label text="First Name"/>
+								<Input value="" editable = "false" id = "firstNameInput"/>
+								<Label text="Last Name" />
+								<Input value="" editable = "false" id="lastNameInput"/>
+                                <Label text="Designation" />
+								<Input value="" editable = "false" id = "designationInput"/>
+                                <Label text="Email" />
+								<Input value=""  editable = "false" id= "emailIdInput"/>
+								<Label text="Phone" />
+								<Input value =""  editable = "false" id ="phoneNumberInput"/>								
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+                    <VBox>
+                        <Table id="idEmployeeLeaveTable" inset="false" 
+                            growing="true"									
+                            items="{/myItems}">
+							<headerToolbar>
+								<Toolbar>
+										<Title text="Leave Requests" level="H2"/>
+										<ToolbarSpacer/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Leave Type"/>
+								</Column>
+								<Column minScreenWidth="Tablet">
+									<Text text="Duration"/>
+								</Column>
+								<Column minScreenWidth="Desktop" >
+									<Text text="Start Date"/>
+								</Column>
+								<Column minScreenWidth="Desktop">
+									<Text text="End Date"/>
+								</Column>
+								<Column>
+									<Text text="Note"/>
+								</Column>
+                                <Column>
+									<Text text="Approver Name"/>
+								</Column>
+                                <Column>
+									<Text text="Status"/>
+								</Column>
+
+							</columns>
+                            
+                                <ColumnListItem>
+									<cells>
+										<Text text="{leaveType}"/>
+                                        <Text text="{duration}"/>
+                                        <Text text="{startDate}"/>
+										<Text text="{endDate}"/>
+										<Text text="{note}"/>
+                                        <Text text="{approverName}"/>
+                                        <Text text="{status}"/>
+									</cells>
+							    </ColumnListItem>	
+						</Table>
+                    </VBox>
+				</content>
+				<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button text="BACK" type="Emphasized" press="onPressBack">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+						</OverflowToolbar>
+					</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

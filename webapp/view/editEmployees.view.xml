@@ -1,0 +1,61 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+controllerName="leaveappfrontend.controller.editEmployees" displayBlock="true">
+	<App>
+		<pages>
+			<Page id= "editEmployees" title="Edit Employee Details">
+				<content>
+					<VBox class="sapUiSmallMargin">			
+					    <f:SimpleForm id="editEmployeesForm"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Details"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" >
+							<f:content>
+                                <Label text="Employee Id"/>
+								<Input value=""  editable = "false" id = "employeeIdInput"/>
+                                <Label text="First Name"/>
+								<Input value="" id = "firstNameInput"/>
+								<Label text="Last Name" />
+								<Input value="" id="lastNameInput"/>
+                                <Label text="Designation" />
+								<Input value="" id = "designationInput"/>
+                                <Label text="Email" />
+								<Input value=""  id= "emailIdInput"/>
+								<Label text="Phone" />
+								<Input value =""  id ="phoneNumberInput"/>								
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button text="Save" type="Emphasized" press="onSave">
+							<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+						</Button>
+						<Button text="Cancel" type="Default" press="onCancel">
+							<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

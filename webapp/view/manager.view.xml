@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core"
+xmlns:tnt="sap.tnt" 
+xmlns="sap.m"
+xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+controllerName="leaveappfrontend.controller.manager" displayBlock="true">> 
+	<App>
+		<pages>
+			<Page id="manager" title="WELCOME MANAGER">
+					<headerContent>
+						<Button icon="sap-icon://log" tooltip="Logout" press="onPressLogout"/>
+					</headerContent>
+					<content>
+							<GenericTile id="viewLeaveTileId" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="View Leave Requests" press="moveToViewLeaveRequests" subheader="Leave Requests">
+								<TileContent>
+									<ImageContent src="sap-icon://general-leave-request"/>
+								</TileContent>
+							</GenericTile>
+							<GenericTile id="createLeaveTileId" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Employees" press="moveToListOfEmployees" subheader="List of Employees">
+								<TileContent>
+									<ImageContent src="sap-icon://employee"/>
+								</TileContent>
+							</GenericTile>
+					</content>
+				</Page>
+		</pages>
+	</App>
+</mvc:View>

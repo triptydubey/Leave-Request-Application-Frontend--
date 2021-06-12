@@ -1,0 +1,77 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:tnt="sap.tnt" 
+xmlns="sap.m"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+controllerName="leaveappfrontend.controller.allEmployees" displayBlock="true"
+> 
+	<App>
+		<pages>
+			<Page id= "allEmployees" title="Your Employees">
+			<VBox >
+				<GenericTile id="addEmployeeId" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Add Employee" press="moveToAddEmployee" subheader="Add a new employee">
+					<TileContent>
+						<ImageContent src="sap-icon://add-employee"/>
+					</TileContent>
+				</GenericTile>
+			</VBox>
+			<content >
+				<VBox>
+					<Table id="idEmployeeTable" inset="false" 
+					growing="true"									
+					items="{/myItems}">
+							<headerToolbar>
+								<Toolbar>
+										<Title text="List of Employees" level="H2"/>
+										<ToolbarSpacer/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Employee Id"/>
+								</Column>
+								<Column minScreenWidth="Tablet">
+									<Text text="Name"/>
+								</Column>
+								<Column minScreenWidth="Desktop" >
+									<Text text="Designation"/>
+								</Column>
+                                <Column >
+                                    <Text text = "Details"/>
+                                </Column>
+								<Column >
+                                    <Text text = "Edit"/>
+                                </Column>
+                                <Column >
+                                    <Text text = "Delete"/>
+                                </Column>
+
+							</columns>
+                            
+                                <ColumnListItem>
+									<cells>
+										<Text text="{employeeId}"/>
+                                        <Text text="{firstName} {lastName}"/>
+                                        <Text text="{designation}"/>
+										<Button icon="sap-icon://display-more" press="onPressDetails"/>
+										<Button icon="sap-icon://edit" press="onPressEdit"/>
+										<Button icon="sap-icon://delete" press="onPressDelete" id="delete"/>
+									</cells>
+							    </ColumnListItem>	
+						</Table>
+				</VBox>
+			</content>
+				<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button text="BACK" type="Emphasized" press="onPressBack">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+						</OverflowToolbar>
+					</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

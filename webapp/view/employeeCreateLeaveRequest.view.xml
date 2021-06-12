@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+controllerName="leaveappfrontend.controller.employeeCreateLeaveRequest" displayBlock="true">
+	<App>
+		<pages>
+			<Page id= "employeeCreateLeaveRequest" title="Create Leave Request">
+				<content>
+					<VBox class="sapUiSmallMargin">			
+					
+						<f:SimpleForm id="leaveCreateFormMore"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Details"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" >
+							<f:content>
+                                <Label text="Leave Type"/>
+								<Input value="" id = "leaveTypeInput"/>
+                                <Label text="Duration"/>
+								<Input value="" id = "durationInput"/>
+								<Label text="Start Date" />
+								<DatePicker value="" id="startDateInput"/>
+								<Label text="End Date" />
+								<DatePicker value=""  id= "endDateInput"/>
+                                <Label text="Note" />
+								<TextArea width="100%" value="" id = "noteInput"/>
+								<Label text="Approver Name" />
+								<Input value ="Nirmala Shettar"  editable = "false" id ="approverInput"/>
+								<Label text="Status"/>
+								<Input value ="Open"  editable = "false" id ="statusInput"/>								
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button text="Save" type="Emphasized" press="onSave">
+							<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+						</Button>
+						<Button text="Cancel" type="Default" press="onCancel">
+							<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

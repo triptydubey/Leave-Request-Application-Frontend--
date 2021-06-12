@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="leaveappfrontend.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id= "View1" title="WELCOME">
+				<content>
+				<VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+					<items>
+					<Input id="uid" placeholder="User ID"></Input>
+					<Input id="rid" placeholder="Role"> </Input>
+					<Button width="12rem" text="Login" type="Emphasized" press="onLoginTap"></Button>
+					</items>
+				</VBox>
+				</content>
+				<footer >
+                    <Bar>
+                        <contentRight>
+                        <Text text="myLogin"></Text>
+                        </contentRight>
+                    </Bar>
+                    </footer>
+                </Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

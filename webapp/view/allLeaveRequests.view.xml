@@ -1,0 +1,79 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:tnt="sap.tnt" 
+xmlns="sap.m"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+xmlns:html="http://www.w3.org/1999/xhtml"
+controllerName="leaveappfrontend.controller.allLeaveRequests" displayBlock="true"
+> 
+	<App>
+		<pages>
+			<Page id= "allLeaveRequests" title="All Leave Requests">
+				<content>
+					<Table id="idLeaveRequestsTable" inset="false" 
+					growing="true"									
+					items="{/myItems}">
+							<headerToolbar>
+								<Toolbar>
+										<Title text="Request Overview" level="H2"/>
+										<ToolbarSpacer/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+                                <Column>
+									<Text text="Employee"/>
+								</Column>
+								<Column>
+									<Text text="Leave Type"/>
+								</Column>
+								<Column minScreenWidth="Tablet">
+									<Text text="Duration"/>
+								</Column>
+								<Column minScreenWidth="Desktop" >
+									<Text text="Start Date"/>
+								</Column>
+								<Column minScreenWidth="Desktop">
+									<Text text="End Date"/>
+								</Column>
+                                <Column>
+									<Text text="Status"/>
+								</Column>
+                                <Column >
+                                    <Text text = "Approve"/>
+                                </Column>
+                                <Column >
+                                    <Text text = "Reject"/>
+                                </Column>
+                                <Column >
+                                    <Text text = "Details"/>
+                                </Column>
+							</columns>
+                            
+                                <ColumnListItem>
+									<cells>
+                                        <Text text="{ownerId}"/>
+										<Text text="{leaveType}"/>
+                                        <Text text="{duration}"/>
+                                        <Text text="{startDate}"/>
+										<Text text="{endDate}"/>
+                                        <Text text="{status}"/>
+										<Button type="Accept" icon="sap-icon://accept" press="onPressAccept"/>
+										<Button type="Reject" icon="sap-icon://decline" press="onPressReject"/>
+                                        <Button icon="sap-icon://display-more" press="onPressDetails"/>
+									</cells>
+							    </ColumnListItem>	
+						</Table>
+				</content>
+				<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button text="BACK" type="Emphasized" press="onPressBack">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+						</OverflowToolbar>
+					</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
